@@ -2,10 +2,15 @@
 on:
   issues:
     types: [labeled]
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+
+safe-outputs:
+  create-pull-request:
+    title-prefix: "[Fix] "
+    draft: false
+    base-branch: "main"
+  add-comment:
+    target: "triggering"
+    max: 1
 ---
 
 # Bug Fix Agent
@@ -14,11 +19,10 @@ When an issue is labeled with both "bug" and "auto-fix":
 
 1. Read the issue to understand the bug
 2. Search the codebase for the relevant file(s)
-3. Create a new branch named `fix/issue-{issue_number}`
-4. Apply the fix based on the bug description
-5. Ensure the fix doesn't break existing functionality
-6. Create a Pull Request referencing the issue
-7. Add a comment on the issue linking to the PR
+3. Apply the fix based on the bug description
+4. Ensure the fix doesn't break existing functionality
+5. Create a Pull Request referencing the issue
+6. Add a comment on the issue linking to the PR
 
 ## Known Bugs Reference
 
@@ -37,18 +41,3 @@ When an issue is labeled with both "bug" and "auto-fix":
 - Add a code comment explaining the fix
 - Run tests with `node tests/app.test.js` to verify
 - Reference the issue number in the commit message: `Fixes #<issue_number>`
-
-## PR Template
-
-```
-## Fix: [Bug Title]
-
-Closes #<issue_number>
-
-### Changes
-- [Description of change]
-
-### Testing
-- [ ] Unit tests pass
-- [ ] Manual verification on mock website
-```
