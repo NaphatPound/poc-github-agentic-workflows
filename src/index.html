@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POC - Bug Fix Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>POC - GitHub Agentic Workflows Bug Fix Demo</h1>
+        <p>A mock website with intentional bugs for AI agent testing</p>
+    </header>
+
+    <main>
+        <!-- Feature 1: Calculator -->
+        <section id="calculator" class="card">
+            <h2>Calculator</h2>
+            <div class="calculator-form">
+                <input type="number" id="num1" placeholder="Number 1" />
+                <select id="operator">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <input type="number" id="num2" placeholder="Number 2" />
+                <button id="calc-btn" onclick="calculate()">Calculate</button>
+            </div>
+            <div id="calc-result" class="result">Result: —</div>
+        </section>
+
+        <!-- Feature 2: Todo List -->
+        <section id="todo" class="card">
+            <h2>Todo List</h2>
+            <div class="todo-form">
+                <input type="text" id="todo-input" placeholder="Add a new todo..." />
+                <button id="add-todo-btn" onclick="addTodo()">Add</button>
+            </div>
+            <ul id="todo-list"></ul>
+        </section>
+
+        <!-- Feature 3: User Profile Card -->
+        <section id="profile" class="card">
+            <h2>User Profile</h2>
+            <div class="profile-card">
+                <img id="profile-img" src="https://via.placeholder.com/100" alt="Profile Picture" />
+                <div class="profile-info">
+                    <h3 id="profile-name">John Doe</h3>
+                    <p id="profile-email"></p>
+                </div>
+                <button id="edit-profile-btn" onclick="editProfile()">Edit Profile</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
