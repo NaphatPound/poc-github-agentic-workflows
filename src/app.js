@@ -9,8 +9,7 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-    // BUG-02: Uses + instead of - (should be: return a - b)
-    return a + b;
+    return a - b;
 }
 
 function multiply(a, b) {
